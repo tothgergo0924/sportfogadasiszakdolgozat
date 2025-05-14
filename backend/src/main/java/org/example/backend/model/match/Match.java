@@ -21,16 +21,22 @@ public class Match {
     })
     private League league;
 
+    @Column(nullable = false)
     private LocalDateTime matchDate;
 
+    @Column(nullable = false)
     private Integer homeScore;
 
+    @Column(nullable = false)
     private Integer awayScore;
 
+    @Column(nullable = false)
     private Double homeOdd;
 
+    @Column(nullable = false)
     private Double awayOdd;
 
+    @Column(nullable = false)
     private Double tieOdd;
 
     @Enumerated(EnumType.STRING)

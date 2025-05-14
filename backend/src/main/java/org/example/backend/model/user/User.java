@@ -26,8 +26,10 @@ public class User  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String username;
 
+    @Column(nullable = false)
     private String email;
 
     @Enumerated(EnumType.STRING)
@@ -36,12 +38,16 @@ public class User  {
     @Column(nullable = false, updatable = false)
     private Instant createdAt = Instant.now();
 
+    @Column(nullable = false)
     private String profilePicUrl;
 
+    @Column(nullable = false)
     private Integer streak;
 
+    @Column(nullable = false)
     private Integer level;
 
+    @Column(nullable = false)
     private String displayName;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)

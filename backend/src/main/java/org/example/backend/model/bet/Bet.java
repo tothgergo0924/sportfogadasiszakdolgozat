@@ -40,7 +40,9 @@ public class Bet {
     @Column(nullable = false, updatable = false)
     private Instant createdAt = Instant.now();
 
+    @Column(nullable = false)
     private Integer stake;
+
 
     private Double odds;
 

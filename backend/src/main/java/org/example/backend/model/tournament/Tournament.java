@@ -17,19 +17,23 @@ public class Tournament {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
     private String reward;
 
     @ManyToOne
     @JoinColumn(name = "creator_user_id", nullable = false)
     private User creator;
 
+    @Column(nullable = false)
     private String name;
 
     @Enumerated(EnumType.STRING)
     private TournamentStatus status;
 
+    @Column(nullable = false)
     private LocalDateTime startDate;
 
+    @Column(nullable = false)
     private LocalDateTime endDate;
 
     @ManyToOne

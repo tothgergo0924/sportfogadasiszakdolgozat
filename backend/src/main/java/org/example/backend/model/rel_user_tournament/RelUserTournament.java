@@ -22,5 +22,6 @@ public class RelUserTournament {
     @JoinColumn(name = "participant_id", nullable = false)
     private User participant;
 
+    @Column(nullable = false)
     private Integer points;
 }

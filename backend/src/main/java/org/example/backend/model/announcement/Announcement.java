@@ -18,10 +18,12 @@ public class Announcement {
     @JoinColumn(name = "tournament_id",nullable = false)
     private Tournament tournament;
 
+    @Column(nullable = false)
     private String title;
 
     @Column(nullable = false, updatable = false)
     private Instant createdAt = Instant.now();
 
+    @Column(nullable = false)
     private String content;
 }
