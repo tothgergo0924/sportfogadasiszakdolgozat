@@ -35,20 +35,19 @@ public class User  {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @Column(nullable = false)
+    private String password;
+
     @Column(nullable = false, updatable = false)
     private Instant createdAt = Instant.now();
 
-    @Column(nullable = false)
     private String profilePicUrl;
 
-    @Column(nullable = false)
-    private Integer streak;
+    @Column(nullable = false,columnDefinition = "INTEGER DEFAULT 0")
+    private Integer streak=0;
 
-    @Column(nullable = false)
-    private Integer level;
-
-    @Column(nullable = false)
-    private String displayName;
+    @Column(nullable = false,columnDefinition = "INTEGER DEFAULT 0")
+    private Integer level=0;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RelAchievementUser> achievement;
