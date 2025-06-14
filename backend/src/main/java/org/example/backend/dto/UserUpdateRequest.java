@@ -1,19 +1,23 @@
 package org.example.backend.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.backend.model.user.Role;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
-    private Long id;
-    private String username;
+public class UserUpdateRequest {
+
+    @Email
     private String email;
-    private Role role;
-    private String profilePicUrl;
+
+    @Min(0)
     private int streak;
+
+    @Min(0)
     private int level;
+
 }

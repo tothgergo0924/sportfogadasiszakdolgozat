@@ -58,10 +58,10 @@ public class User  {
     @OneToMany(mappedBy = "receiver", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FriendRequest> receivedFriendRequests;
 
-    @OneToMany(mappedBy = "initiator")
+    @OneToMany(mappedBy = "initiator", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Friendship> friendshipsInitiated;
 
-    @OneToMany(mappedBy = "receiver")
+    @OneToMany(mappedBy = "receiver", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Friendship> friendshipsReceived;
 
     @OneToMany(mappedBy = "creator", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)

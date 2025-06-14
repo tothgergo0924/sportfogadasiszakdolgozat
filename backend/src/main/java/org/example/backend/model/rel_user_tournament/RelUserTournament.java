@@ -7,7 +7,7 @@ import org.example.backend.model.user.User;
 
 @Data
 @Entity
-@Table(name = "rel_user_tournament",uniqueConstraints = @UniqueConstraint(columnNames = {"tournament","participant"}))
+@Table(name = "rel_user_tournament",uniqueConstraints = @UniqueConstraint(columnNames = {"tournament_id","participant_id"}))
 public class RelUserTournament {
 
     @Id
